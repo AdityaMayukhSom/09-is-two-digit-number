@@ -4,6 +4,6 @@
 using namespace std;
 
 int main(){
-    std::cout << "Aditya Mayukh Som" << std::endl;
+    std::cout << "Soumalya" << std::endl;
     return 0;
 }
