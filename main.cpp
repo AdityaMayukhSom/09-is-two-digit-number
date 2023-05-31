@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(){
+    std::cout << "Fruit Consumer System" << std::endl;
     std::cout << "Aditya Mayukh Som" << std::endl;
     return 0;
 }
