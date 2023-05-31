@@ -1,9 +1,8 @@
 #include <iostream>
 #include <fstream>
-
 using namespace std;
-
-int main(){
+int main() {
+    std::cout << "Umangh";
     std::cout << "Debabrata Mondal" << std::endl;
     std::cout << "Fruit Consumer System" << std::endl;
     std::cout << "Aditya Mayukh Som" << std::endl;
