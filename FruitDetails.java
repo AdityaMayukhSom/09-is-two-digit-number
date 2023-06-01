@@ -1,5 +1,5 @@
 class FruitDetails {
-    private String fruitName;
+    private final String fruitName;
     private Integer fruitQuantity;
     private Double pricePerKilo;
 
@@ -17,10 +17,6 @@ class FruitDetails {
 
     public String getFruitName() {
         return fruitName;
-    }
-
-    public void setFruitName(final String fruitName) {
-        this.fruitName = fruitName;
     }
 
     public Integer getFruitQuantity() {
