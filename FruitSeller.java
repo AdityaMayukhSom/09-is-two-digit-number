@@ -36,6 +36,8 @@ public class FruitSeller {
                         fruitIndexMap.get(fruitName).setFruitQuantity(availableQuantity - desiredQuantity);
                         InvoicePrinter.printSuccess(buyerName, fruitName, desiredQuantity, pricePerKilo);
                         InvoiceWriter.writeSuccess(outputFileName, buyerName, fruitName, desiredQuantity, pricePerKilo);
+                        if(availableQuantity==desiredQuantity)
+                        fruitIndexMap.remove(fruitName);
                     } else {
                         InvoicePrinter.printQuantityNotAvailable();
                         InvoiceWriter.writeQuantityNotAvailable(outputFileName, buyerName, fruitName, desiredQuantity);
