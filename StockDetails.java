@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -5,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 public class StockDetails {
     public static HashMap<String, FruitDetails> generate() throws IOException, FileNotFoundException {
@@ -57,5 +59,21 @@ public class StockDetails {
 
         bw.close();
         fw.close();
+    }
+
+    public static List<StringBuilder> getCurrState(HashMap<String, FruitDetails> fruitIndexMap) {
+        List<StringBuilder> allStates = new ArrayList<>();
+        for (String fruitName : fruitIndexMap.keySet()) {
+            StringBuilder state = new StringBuilder();
+            state.append(fruitName).append(" : ").append(fruitIndexMap.get(fruitName).getFruitQuantity());
+            allStates.add(state);
+        }
+        return allStates;
+    }
+}
+
+class StockEmpty extends Exception {
+    public StockEmpty(String message) {
+        super(message);
     }
 }
