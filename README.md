@@ -22,14 +22,22 @@ This Java terminal application is designed to serve as a menu-driven fruit selle
 2. Compile the Java source code to generate the executable class files:
 
 ```shell
-javac FruitSeller.java
-java FruitSeller
+cd src
+javac -d ../build Main.java
 ```
-3. Follow the on-screen instructions to input the customer details, select fruits, and specify the quantity to purchase. The application will read data from `FruitList.csv` file and after you close the application, it will write final changes to the same.
 
-4. The application will generate an invoice for each purchase, displaying the customer name, fruit name, quantity, price per kilo, and the total price. One invoice will be printed in the terminal for the user, another will be written inside `Sales.txt` for business uses.
+3. To run the program, go to `/build` directory and run `Main.class`. 
 
-5. After each purchase, the user will be prompted to continue shopping or exit the application. Write `yes` to continue, and `no` to exit.
+```shell
+cd build
+java Main
+```
+
+4. Follow the on-screen instructions to input the customer details, select fruits, and specify the quantity to purchase. The application will read data from `FruitList.csv` file and after you close the application, it will write final changes to the same.
+
+5. The application will generate an invoice for each purchase, displaying the customer name, fruit name, quantity, price per kilo, and the total price. One invoice will be printed in the terminal for the user, another will be written inside `Sales.txt` for business uses.
+
+6. After each purchase, the user will be prompted to continue shopping or exit the application. Write `yes` to continue, and `no` to exit.
 
 ## Contributions
 

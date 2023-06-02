@@ -1,0 +1,16 @@
+--------------:: PURCHASE SUCCESS ::--------------
+Buyer's Name	:: Aditya Mayukh Som
+Fruit Name		:: Apple
+Fruit Quantity	:: 20
+Price Per Kilo	:: $10.0
+Total Price		:: $200.0
+--------------:: PURCHASE SUCCESS ::--------------
+Buyer's Name	:: Soumalya
+Fruit Name		:: Banana
+Fruit Quantity	:: 5
+Price Per Kilo	:: $12.5
+Total Price		:: $62.5
+--------------:: PURCHASE FAILED ::--------------
+Buyer's Name	:: Aditya
+Fruit Name		:: Dragonfruit
+ERR :: Desired Fruit Not Available.

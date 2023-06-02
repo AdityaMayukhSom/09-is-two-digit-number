@@ -1,3 +1,5 @@
+package com.fruitseller;
+
 class FruitDetails {
     private String fruitName;
     private Integer fruitQuantity;

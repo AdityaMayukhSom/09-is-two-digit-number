@@ -1,15 +1,21 @@
+package com.fruitseller;
+
 import java.util.HashMap;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class StockDetails {
+class StockDetails {
+    public static String inputFilePath = "../data/FruitList.csv";
+    public static File inputFile = new File(inputFilePath);
+
     public static HashMap<String, FruitDetails> generate() throws IOException, FileNotFoundException {
         HashMap<String, FruitDetails> fruitIndexMap = new HashMap<String, FruitDetails>();
-        FileReader fr = new FileReader("FruitList.csv");
+        FileReader fr = new FileReader(inputFile);
         BufferedReader br = new BufferedReader(fr);
 
         // first line contains the headings of the columns, here we discard the line
@@ -41,7 +47,7 @@ public class StockDetails {
     }
 
     public static void write(HashMap<String, FruitDetails> fruitIndexMap) throws IOException {
-        FileWriter fw = new FileWriter("FruitList.csv");
+        FileWriter fw = new FileWriter(inputFile);
         BufferedWriter bw = new BufferedWriter(fw);
 
         bw.write("name,quantity,pricePerKilo");

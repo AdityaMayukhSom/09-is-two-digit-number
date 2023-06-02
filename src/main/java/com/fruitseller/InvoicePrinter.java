@@ -1,7 +1,9 @@
+package com.fruitseller;
+
 /**
  * Class to write generated Invoice in the terminal
  */
-public class InvoicePrinter {
+class InvoicePrinter {
     public static void printSuccess(String buyerName, String fruitName, int quantity,
             double unitPrice) {
         System.out.println("--------------:: PURCHASE SUCCESS ::--------------");

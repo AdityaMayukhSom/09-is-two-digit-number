@@ -1,3 +1,5 @@
+package com.fruitseller;
+
 public class StringModifier {
     public static String toTitleCase(String text) {
         if (text == null || text.isEmpty()) {

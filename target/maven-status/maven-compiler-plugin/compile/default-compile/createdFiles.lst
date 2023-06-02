@@ -1,0 +1,6 @@
+com\fruitseller\FruitSellerSystem.class
+com\fruitseller\InvoicePrinter.class
+com\fruitseller\StringModifier.class
+com\fruitseller\InvoiceWriter.class
+com\fruitseller\StockDetails.class
+com\fruitseller\FruitDetails.class

@@ -1,12 +1,13 @@
+package com.fruitseller;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class FruitSeller {
+public class FruitSellerSystem {
     public static void main(final String[] args) {
-        final String outputFileName = "Sales.txt";
         try (InputStreamReader isr = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(isr);) {
 
@@ -35,14 +36,14 @@ public class FruitSeller {
                     if (availableQuantity >= desiredQuantity) {
                         fruitIndexMap.get(fruitName).setFruitQuantity(availableQuantity - desiredQuantity);
                         InvoicePrinter.printSuccess(buyerName, fruitName, desiredQuantity, pricePerKilo);
-                        InvoiceWriter.writeSuccess(outputFileName, buyerName, fruitName, desiredQuantity, pricePerKilo);
+                        InvoiceWriter.writeSuccess(buyerName, fruitName, desiredQuantity, pricePerKilo);
                     } else {
                         InvoicePrinter.printQuantityNotAvailable();
-                        InvoiceWriter.writeQuantityNotAvailable(outputFileName, buyerName, fruitName, desiredQuantity);
+                        InvoiceWriter.writeQuantityNotAvailable(buyerName, fruitName, desiredQuantity);
                     }
                 } else {
                     InvoicePrinter.printFruitNotFound();
-                    InvoiceWriter.writeFruitNotFound(outputFileName, buyerName, fruitName);
+                    InvoiceWriter.writeFruitNotFound(buyerName, fruitName);
                 }
                 System.out.print("Do you want to continue shopping? (yes/no): ");
                 String continueChoice = br.readLine();

@@ -1,14 +1,20 @@
+package com.fruitseller;
+
 import java.io.FileWriter;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 
 /**
  * Class to write generated Invoice to the desired output file.
  */
-public class InvoiceWriter {
-    public static void writeSuccess(String fileName, String buyerName, String fruitName, int quantity,
+class InvoiceWriter {
+    public static String outputFilePath = "../data/Sales.txt";
+    public static File outputFile = new File(outputFilePath);
+
+    public static void writeSuccess(String buyerName, String fruitName, int quantity,
             double unitPrice) throws IOException {
-        FileWriter fw = new FileWriter(fileName, true);
+        FileWriter fw = new FileWriter(outputFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
 
         bw.flush();
@@ -29,9 +35,9 @@ public class InvoiceWriter {
         fw.close();
     }
 
-    public static void writeQuantityNotAvailable(String fileName, String buyerName, String fruitName,
+    public static void writeQuantityNotAvailable(String buyerName, String fruitName,
             int desiredQuantity) throws IOException {
-        FileWriter fw = new FileWriter(fileName, true);
+        FileWriter fw = new FileWriter(outputFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
 
         bw.flush();
@@ -50,9 +56,9 @@ public class InvoiceWriter {
         fw.close();
     }
 
-    public static void writeFruitNotFound(String fileName, String buyerName, String desiredFruitName)
+    public static void writeFruitNotFound(String buyerName, String desiredFruitName)
             throws IOException {
-        FileWriter fw = new FileWriter(fileName, true);
+        FileWriter fw = new FileWriter(outputFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
 
         bw.flush();
