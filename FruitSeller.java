@@ -4,7 +4,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+/**
+ * Represents a fruit selling application where buyers can purchase fruits and
+ * generate invoices.
+ */
 public class FruitSeller {
+    /**
+     * The main entry point of the FruitSeller application.
+     *
+     * @param args command-line arguments
+     */
+
     public static void main(final String[] args) {
         final String outputFileName = "Sales.txt";
         try (InputStreamReader isr = new InputStreamReader(System.in);
