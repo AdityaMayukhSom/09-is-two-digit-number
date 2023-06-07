@@ -8,7 +8,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Utility class for generating and writing stock details of fruits.
+ */
 public class StockDetails {
+    /**
+     * Generates a HashMap of fruit details from a CSV file.
+     *
+     * @return a HashMap with fruit names as keys and FruitDetails objects as values
+     * @throws IOException           if an I/O error occurs while reading the CSV
+     *                               file
+     * @throws FileNotFoundException if the CSV file is not found
+     */
     public static HashMap<String, FruitDetails> generate() throws IOException, FileNotFoundException {
         HashMap<String, FruitDetails> fruitIndexMap = new HashMap<String, FruitDetails>();
         FileReader fr = new FileReader("FruitList.csv");
@@ -42,6 +53,13 @@ public class StockDetails {
         return fruitIndexMap;
     }
 
+    /**
+     * Writes the stock details of fruits to a CSV file.
+     *
+     * @param fruitIndexMap a HashMap with fruit names as keys and FruitDetails
+     *                      objects as values
+     * @throws IOException if an I/O error occurs while writing the CSV file
+     */
     public static void write(HashMap<String, FruitDetails> fruitIndexMap) throws IOException {
         FileWriter fw = new FileWriter("FruitList.csv");
         BufferedWriter bw = new BufferedWriter(fw);
