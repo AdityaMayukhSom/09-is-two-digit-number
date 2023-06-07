@@ -29,9 +29,12 @@ public class FruitSeller {
 
             boolean continueShopping = true;
             while (continueShopping) {
+                System.out.println("Current stock: "+StockDetails.getCurrState(fruitIndexMap));
+                if(StockDetails.getCurrState(fruitIndexMap).isEmpty()){
+                    throw new StockEmpty("all fruits sold out");
+                }
                 System.out.print("Enter Fruit Name :: ");
                 String fruitName = br.readLine().toLowerCase();
-
                 if (fruitIndexMap.containsKey(fruitName)) {
                     int availableQuantity = fruitIndexMap.get(fruitName).getFruitQuantity();
                     double pricePerKilo = fruitIndexMap.get(fruitName).getPricePerKilo();
@@ -44,8 +47,13 @@ public class FruitSeller {
 
                     if (availableQuantity >= desiredQuantity) {
                         fruitIndexMap.get(fruitName).setFruitQuantity(availableQuantity - desiredQuantity);
+                        if(fruitIndexMap.get(fruitName).getFruitQuantity()==0){
+                            fruitIndexMap.remove(fruitName);
+                        }
                         InvoicePrinter.printSuccess(buyerName, fruitName, desiredQuantity, pricePerKilo);
                         InvoiceWriter.writeSuccess(outputFileName, buyerName, fruitName, desiredQuantity, pricePerKilo);
+                        if(availableQuantity==desiredQuantity)
+                        fruitIndexMap.remove(fruitName);
                     } else {
                         InvoicePrinter.printQuantityNotAvailable();
                         InvoiceWriter.writeQuantityNotAvailable(outputFileName, buyerName, fruitName, desiredQuantity);
@@ -67,6 +75,8 @@ public class FruitSeller {
             fnfe.printStackTrace();
         } catch (IOException ioe) {
             ioe.printStackTrace();
+        }catch(StockEmpty e){
+            System.out.println(e.getMessage());
         }
     }
 }

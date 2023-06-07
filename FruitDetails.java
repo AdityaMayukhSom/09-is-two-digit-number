@@ -3,7 +3,7 @@
  * kilo.
  */
 class FruitDetails {
-    private String fruitName;
+    private final String fruitName;
     private Integer fruitQuantity;
     private Double pricePerKilo;
 
